@@ -2,7 +2,7 @@
 import { Outlet } from "react-router-dom";
 
 //import navbar per averlo nel template che si ripeterà ad ogni sezione
-import NavBar from "../NavBar";
+import NavBar from "../components/NavBar";
 
 export default function DefaultLayout() {
   return (

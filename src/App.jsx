@@ -2,11 +2,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //import layout
-import DefaultLayout from "./components/layouts/DefaultLayout";
+import DefaultLayout from "./layouts/DefaultLayout";
 
 //import pages
-import HomePage from "./components/pages/HomePage";
-import MoviePage from "./components/pages/MoviePage";
+import HomePage from "./pages/HomePage";
+import MoviePage from "./pages/MoviePage";
 
 function App() {
   return (
