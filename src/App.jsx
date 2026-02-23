@@ -7,6 +7,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 //import pages
 import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route element={<DefaultLayout />}>
           <Route index element={<HomePage />} />
           <Route path="/movies/:id" element={<MoviePage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
