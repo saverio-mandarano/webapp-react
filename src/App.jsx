@@ -6,6 +6,7 @@ import DefaultLayout from "./components/layouts/DefaultLayout";
 
 //import pages
 import HomePage from "./components/pages/HomePage";
+import MoviePage from "./components/pages/MoviePage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route element={<DefaultLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="/movies/:id" element={<MoviePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
