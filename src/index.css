@@ -3,3 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* cards layout */
+.card-container {
+  gap: 20px;
+}
+
+.card {
+  width: calc(100% / 3 - (60px / 3));
+  background-color: rgb(246, 246, 246);
+  color: black;
+  text-align: center;
+}
+
+.product-img img {
+  width: 50%;
+  height: 220px;
+}
+
+/* HomePage */
+.subtitle {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
