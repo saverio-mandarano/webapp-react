@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const MovieCard = () => {
   return (
-    <div className="card mb-4">
+    <div className="card mb-4 homepage">
       <img
         src="../../public/warner-bros.jpg"
         className="card-img-top"

@@ -4,8 +4,8 @@ const HomePage = () => {
   return (
     <>
       <h1 className="mt-3">Welcome to "Streaming Community" Website</h1>
-      <h3 className="subtitle">The world's largest pirate film archive</h3>
-      <div className="card-container d-flex flex-wrap">
+      <h3 className="subtitle ">The world's largest pirate film archive</h3>
+      <div className="card-container d-flex flex-wrap homepage">
         <MovieCard />
         <MovieCard />
         <MovieCard />
