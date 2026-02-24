@@ -25,6 +25,6 @@
 
 /* Movie Page */
 .moviepage img {
-  height: 100%;
-  object-fit: cover;
+  width: 50%;
+  /* object-fit: cover; */
 }
