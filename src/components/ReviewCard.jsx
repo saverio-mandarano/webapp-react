@@ -1,7 +1,17 @@
 const ReviewCard = (props) => {
-  const { id, name, vote, text, created_at, updated_at } = props.reviewProp;
+  const { name, vote, text } = props.reviewProp;
 
-  return 0;
+  return (
+    <div className="card mb-4">
+      <div className="card-body">
+        <p className="card-text">{text}</p>
+        <strong>Vote: {vote}</strong>
+        <address>
+          <i>By {name}</i>
+        </address>
+      </div>
+    </div>
+  );
 };
 
 export default ReviewCard;
