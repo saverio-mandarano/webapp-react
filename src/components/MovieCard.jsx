@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const MovieCard = (props) => {
-  const { id, title, author, abstract, image_url } = props.movieProp;
+  const { id, title, director, abstract, image_url } = props.movieProp;
 
   return (
     <div className="card mb-4 homepage">
@@ -9,7 +9,7 @@ const MovieCard = (props) => {
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <address>
-          <i>By {author}</i>
+          <i>By {director}</i>
         </address>
         <p className="card-text">{abstract}</p>
         <Link to={`movies/${id}`} className="btn btn-primary">
