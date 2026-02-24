@@ -23,14 +23,7 @@ const HomePage = () => {
   // // funzione di rendering del listato dei film
   const renderMovies = () => {
     return movies.map((movie) => {
-      return (
-        <div
-          className="card-container d-flex flex-wrap homepage"
-          key={movie.id}
-        >
-          <MovieCard movieProp={movie} />
-        </div>
-      );
+      return <MovieCard key={movie.id} movieProp={movie} />;
     });
   };
 
@@ -44,12 +37,6 @@ const HomePage = () => {
       <h1 className="mt-3">Welcome to "Streaming Community" Website</h1>
       <h3 className="subtitle ">The world's largest pirate film archive</h3>
       <div className="card-container d-flex flex-wrap homepage">
-        {/* <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard /> */}
-
         {renderMovies()}
       </div>
     </>
