@@ -1,6 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
+const endpoint = "http://localhost:3000/api/movies";
 
 const MoviePage = () => {
+  const { id } = useParams();
+
+  // creo var di stato per gestire il singolo film restituito dalla richiesta HTTP all'API
+  const [movie, setMovie] = useState({});
+
+  const fetchMovie = () => {
+    axios
+      .get(`${endpoint}/${id}`)
+      .then((res) => {
+        setMovie(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(fetchMovie, []);
+
   return (
     <>
       <div className="card my-4 w-100">
