@@ -13,12 +13,7 @@ const HomePage = () => {
     axios
       .get(endpoint)
       .then((res) => {
-        // setMovies(res.data);
-        const moviesPlusUrl = res.data.map((movie) => ({
-          ...movie,
-          image_url: `http://localhost:3000/${movie.image}`,
-        }));
-        setMovies(moviesPlusUrl);
+        setMovies(res.data);
       })
       .catch((err) => {
         console.log(err);
