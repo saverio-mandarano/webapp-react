@@ -2,7 +2,7 @@ const ReviewCard = (props) => {
   const { name, vote, text } = props.reviewProp;
 
   return (
-    <div className="card mb-4">
+    <div className="card mb-4 bg-light">
       <div className="card-body">
         <p className="card-text">{text}</p>
         <strong>Vote: {vote}</strong>

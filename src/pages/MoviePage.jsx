@@ -39,7 +39,7 @@ const MoviePage = () => {
   return (
     <>
       {/* SEZIONE DETTAGLI DEL FILM */}
-      <section id="movie-details" className="card my-4 w-100">
+      <section id="movie-details" className="card my-4 w-100 bg-body-secondary">
         <div className="row g-0 anteprima">
           <div className="col-md-4 moviepage">
             <img src={image_url} className="card-img-top " alt={title} />
@@ -62,16 +62,16 @@ const MoviePage = () => {
       </section>
 
       {/* SEZIONE RECENSIONI DEL FILM */}
-      <section id="movie-reviews">{renderReviews()}</section>
+      <section id="movie-reviews ">{renderReviews()}</section>
 
       {/* SEZIONE FORM REVIEW */}
       <section id="form-reviews">
         <FormReview movie_id={movie.id} />
       </section>
 
-      <Link to="/" className="btn btn-secondary">
+      {/* <Link to="/" className="btn btn-secondary">
         Back to Products List
-      </Link>
+      </Link> */}
     </>
   );
 };
