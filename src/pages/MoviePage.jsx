@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -9,6 +9,8 @@ const endpoint = "http://localhost:3000/api/movies";
 
 const MoviePage = () => {
   const { id } = useParams();
+
+  const redirect = useNavigate();
 
   // creo var di stato per gestire il singolo film restituito dalla richiesta HTTP all'API
   const [movie, setMovie] = useState({});
@@ -21,6 +23,7 @@ const MoviePage = () => {
       })
       .catch((err) => {
         console.log(err);
+        if ((err.status = 404)) redirect("/404");
       });
   };
 
