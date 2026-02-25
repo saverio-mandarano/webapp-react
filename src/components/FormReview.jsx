@@ -34,6 +34,7 @@ const FormReview = (props) => {
       })
       .then(() => {
         console.log("recensione inviata");
+        props.reloadReviews();
         setFormData(initFormData);
       })
       .catch((err) => {
@@ -80,7 +81,7 @@ const FormReview = (props) => {
 
             <div className="mb-4">
               <label htmlFor="review-vote" className="form-label">
-                Rating (1–5)
+                Rating (1-5)
               </label>
               <input
                 id="review-vote"

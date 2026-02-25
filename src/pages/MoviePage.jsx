@@ -66,7 +66,7 @@ const MoviePage = () => {
 
       {/* SEZIONE FORM REVIEW */}
       <section id="form-reviews">
-        <FormReview movie_id={movie.id} />
+        <FormReview movie_id={movie.id} reloadReviews={fetchMovie} />
       </section>
 
       {/* <Link to="/" className="btn btn-secondary">
