@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import ReviewCard from "../components/ReviewCard";
+import FormReview from "../components/FormReview";
 
 const endpoint = "http://localhost:3000/api/movies";
 
@@ -62,6 +63,11 @@ const MoviePage = () => {
 
       {/* SEZIONE RECENSIONI DEL FILM */}
       <section id="movie-reviews">{renderReviews()}</section>
+
+      {/* SEZIONE FORM REVIEW */}
+      <section id="form-reviews">
+        <FormReview />
+      </section>
 
       <Link to="/" className="btn btn-secondary">
         Back to Products List
