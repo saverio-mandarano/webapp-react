@@ -43,16 +43,64 @@ const FormReview = (props) => {
 
   return (
     <>
-      <div className="card">
-        <header className="card-header">
-          <h5>Add your review</h5>
-        </header>
-        <div className="card-body"></div>
-        <form onSubmit={handleSubmit}>
-          <button type="submit" className="btn btn-primary">
-            Send
-          </button>
-        </form>
+      <div className="card shadow-sm mt-5 bg-body-secondary">
+        <div className="card-body">
+          <h4 className="mb-4">Write a Review</h4>
+
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="review-name" className="form-label">
+                Your Name
+              </label>
+              <input
+                id="review-name"
+                type="text"
+                name="name"
+                className="form-control"
+                placeholder="Enter your name"
+                value={formData.name}
+                onChange={setFieldValue}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="review-text" className="form-label">
+                Your Review
+              </label>
+              <textarea
+                id="review-text"
+                name="text"
+                rows="5"
+                className="form-control"
+                placeholder="Write your opinion..."
+                value={formData.text}
+                onChange={setFieldValue}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label htmlFor="review-vote" className="form-label">
+                Rating (1–5)
+              </label>
+              <input
+                id="review-vote"
+                type="number"
+                name="vote"
+                min="1"
+                max="5"
+                className="form-control"
+                value={formData.vote}
+                onChange={setFieldValue}
+              />
+            </div>
+
+            <div>
+              <button type="submit" className="btn btn-success px-4 py-1">
+                Submit Review
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );
