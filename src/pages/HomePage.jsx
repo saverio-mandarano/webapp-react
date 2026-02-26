@@ -27,7 +27,12 @@ const HomePage = () => {
       .catch((err) => {
         console.log(err);
       })
-      .finally(setIsLoading(false));
+      // .finally(setIsLoading(false));
+      .finally(() => {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000); // 1000 ms = 1 secondo
+      });
   };
 
   // // funzione di rendering del listato dei film
