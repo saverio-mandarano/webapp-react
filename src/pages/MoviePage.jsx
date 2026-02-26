@@ -5,10 +5,16 @@ import { useState, useEffect } from "react";
 import ReviewCard from "../components/ReviewCard";
 import FormReview from "../components/FormReview";
 
+// import hook custom del contesto globale
+import { useGlobal } from "../contexts/GlobalContext";
+
 const endpoint = "http://localhost:3000/api/movies";
 
 const MoviePage = () => {
   const { id } = useParams();
+
+  // attivo l'utilizzo del/dei valore/i messi a disposizione del contesto globale
+  const { setIsLoading } = useGlobal();
 
   const redirect = useNavigate();
 
@@ -16,6 +22,9 @@ const MoviePage = () => {
   const [movie, setMovie] = useState({});
 
   const fetchMovie = () => {
+    // parte la chimata cambio var stato context di conseguenza
+    setIsLoading(true);
+
     axios
       .get(`${endpoint}/${id}`)
       .then((res) => {
@@ -24,7 +33,8 @@ const MoviePage = () => {
       .catch((err) => {
         console.log(err);
         if ((err.status = 404)) redirect("/404");
-      });
+      })
+      .finally(setIsLoading(false));
   };
 
   useEffect(fetchMovie, []);

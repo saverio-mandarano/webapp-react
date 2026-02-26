@@ -3,13 +3,22 @@ import { useState, useEffect } from "react";
 
 import MovieCard from "../components/MovieCard";
 
+// import hook custom del contesto globale
+import { useGlobal } from "../contexts/GlobalContext";
+
 const endpoint = "http://localhost:3000/api/movies";
 
 const HomePage = () => {
   // creo var di stato per gestire l'array di film restituiti dalla richiesta HTTP all'API
   const [movies, setMovies] = useState([]);
 
+  // attivo l'utilizzo del/dei valore/i messi a disposizione del contesto globale
+  const { setIsLoading } = useGlobal();
+
   const fetchMovies = () => {
+    // parte la chimata cambio var stato context di conseguenza
+    setIsLoading(true);
+
     axios
       .get(endpoint)
       .then((res) => {
@@ -17,7 +26,8 @@ const HomePage = () => {
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
+      .finally(setIsLoading(false));
   };
 
   // // funzione di rendering del listato dei film
